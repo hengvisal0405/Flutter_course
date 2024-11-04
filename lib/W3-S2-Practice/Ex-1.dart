@@ -5,7 +5,7 @@ void main() {
     home: Scaffold(
       body: Center(
           child: Text(
-        "EthanHikk",
+        "hal viseng",
         style: TextStyle(
           color: Colors.orange,
           fontSize: 50,
