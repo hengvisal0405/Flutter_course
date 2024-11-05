@@ -46,7 +46,7 @@ void main() {
           padding: const EdgeInsets.all(40),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 width: 600,
                 height: 250,
                 child: Card(
@@ -90,7 +90,7 @@ void main() {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 600,
                 height: 250,
                 child: Card(
@@ -109,7 +109,7 @@ void main() {
                           height: 150,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 30),
+                      Padding(padding: const EdgeInsets.only(left: 30),
                       child:Text(
                         Product.flutter.title,
                         style: const TextStyle(
@@ -117,7 +117,7 @@ void main() {
                         ),
                       ),
                       ),
-                      Padding(padding: EdgeInsets.only(left:30),
+                      Padding(padding: const EdgeInsets.only(left:30),
                       child:  Text(
                           Product.flutter.description,
                           style: const TextStyle(
@@ -130,7 +130,7 @@ void main() {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 600,
                 height: 250,
                 child: Card(
@@ -150,7 +150,7 @@ void main() {
                           height: 150,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 30),
+                      Padding(padding: const EdgeInsets.only(left: 30),
                       child: Text(
                         Product.firebase.title,
                         style: const TextStyle(
@@ -158,7 +158,7 @@ void main() {
                         ),
                       ),
                       ),
-                      Padding(padding: EdgeInsets.only(left: 30),
+                      Padding(padding: const EdgeInsets.only(left: 30),
                       child: Text(
                         Product.firebase.description,
                         style: const TextStyle(

@@ -27,7 +27,7 @@ class HobbiesCard extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Container(
+                    child: SizedBox(
                       width: 500,
                       height: 100,
                       child: Container(
@@ -76,7 +76,6 @@ class HobbiesCard extends StatelessWidget {
                                 height: 30,
                               ),
                             ),
-
                             const Text(
                               'Skating',
                               style: TextStyle(
