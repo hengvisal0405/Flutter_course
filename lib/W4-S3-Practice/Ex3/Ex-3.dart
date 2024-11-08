@@ -21,17 +21,18 @@ class ImageGerllaryState extends State<ImageGerllary> {
   int i = 0;
   void nextImage() {
     setState(() {
-      i = i + 1;
-      activeImage = images[i];
+        i = (i + 1) % images.length; 
+        activeImage = images[i];
     });
   }
 
   void previousImage() {
     setState(() {
-      i = i - 1;
-      activeImage = images[i];
+       i = (i - 1 + images.length) % images.length; 
+        activeImage = images[i];
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

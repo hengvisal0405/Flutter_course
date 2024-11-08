@@ -1,98 +1,95 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ProfileScreen(),
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blue,
+        appBar: AppBar(
+          title: const Text("Products"),
+          centerTitle: false,
+        ),
+        body: const Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ProductCard(product: Product.dart),
+              ProductCard(product: Product.flutter),
+              ProductCard(product: Product.firebase),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class ProductCard extends StatelessWidget {
+  final Product product;
+
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-      ),
-      backgroundColor: Colors.lightBlue[50],
-      body: Column(
-        children: [
-         const SizedBox(height: 20),
-          const CircleAvatar(
-            radius: 50,
-            backgroundImage: NetworkImage(
-              'https://via.placeholder.com/150',
+    return Card(
+      color: Colors.white,
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Image.asset(
+              product.image,
+              height: 80,
+              width: 80,
+              fit: BoxFit.contain,
+              alignment: Alignment.bottomLeft,
             ),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            'John Doe',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+            const SizedBox(height: 10),
+            Text(
+              product.title,
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
-          ),
-          Text(
-            'Flutter Developer',
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.grey[700],
+            const SizedBox(height: 10),
+            Text(
+              product.description,
+              style: const TextStyle(fontSize: 16, color: Colors.black),
             ),
-          ),
-          const SizedBox(height: 20),
-
-          // Card with centered text
-          Card(
-            color: Colors.blue,
-            margin: const EdgeInsets.symmetric(horizontal: 40.0),
-            child: Container(
-              width: 300,
-              height: 100,
-              padding: const EdgeInsets.all(20),
-              child: const Center(
-                // Center widget to align text
-                child: Text(
-                  'Travelling',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors
-                        .white, // Optional: Set text color to white for contrast
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.link),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.message),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(Icons.phone),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
+}
+
+enum Product {
+  dart(
+      title: 'Dart',
+      description: 'The best object-oriented language',
+      image: 'assets/W4-S1/dart.png'),
+  flutter(
+      title: 'Flutter',
+      description: 'The best mobile widget library',
+      image: 'assets/W4-S1/flutter.png'),
+  firebase(
+      title: 'Firebase',
+      description: 'The best cloud database',
+      image: 'assets/W4-S1/firebase.png');
+
+  final String title;
+  final String description;
+  final String image;
+
+  const Product({
+    required this.title,
+    required this.description,
+    required this.image,
+  });
 }

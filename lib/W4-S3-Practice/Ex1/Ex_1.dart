@@ -30,16 +30,16 @@ class SelectButtonState extends State<SelectButton> {
   @override
   Widget build(BuildContext context) {
     String textBtn;
-    Color buttonColor;
+    Color? buttonColor;
     Color textColor;
 
     if (isSelected) {
       textBtn = "Selected";
-      buttonColor = const Color(0xFF48c9b0);
+      buttonColor = Colors.blue[500];
       textColor = Colors.white;
     } else {
       textBtn = "Not Selected";
-      buttonColor = const Color(0xFFf5b041);
+      buttonColor =Colors.blue[50];
       textColor = Colors.black;
     }
     return SizedBox(

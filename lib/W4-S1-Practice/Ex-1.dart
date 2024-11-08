@@ -7,8 +7,7 @@ class HobbiesCard extends StatelessWidget {
   const HobbiesCard({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      
+    return MaterialApp(   
       home: Scaffold(
         backgroundColor: Colors.grey,
         appBar: AppBar(
@@ -92,11 +91,6 @@ class HobbiesCard extends StatelessWidget {
               ],
             ),
           ),
-
-          
-
-        
-        
         ),
       ),
     );

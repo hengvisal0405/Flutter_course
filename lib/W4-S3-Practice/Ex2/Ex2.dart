@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FavoriteHeart extends StatefulWidget {
-  const FavoriteHeart({super.key});
+class Heart extends StatefulWidget {
+  const Heart({super.key});
 
   @override
   HeartState createState() => HeartState();
 }
 
-class HeartState extends State<FavoriteHeart> {
+class HeartState extends State<Heart> {
   bool isFavorite1 = false;
   bool isFavorite2 = false;
   bool isFavorite3 = false;
@@ -32,135 +32,83 @@ class HeartState extends State<FavoriteHeart> {
 
   @override
   Widget build(BuildContext context) {
-    Color buttonColor1;
-    if (isFavorite1) {
-      buttonColor1 = Colors.red;
-    } else {
-      buttonColor1 = Colors.grey;
-    }
-
-    Color buttonColor2;
-    if (isFavorite2) {
-      buttonColor2 = Colors.red;
-    } else {
-      buttonColor2 = Colors.grey;
-    }
-
-    Color buttonColor3;
-    if (isFavorite3) {
-      buttonColor3 = Colors.red;
-    } else {
-      buttonColor3 = Colors.grey;
-    }
-
     return Column(
       children: [
-        Container(
-          decoration: const BoxDecoration(
-            border: Border(
-              bottom: BorderSide(width: .5, color: Colors.grey),
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Expanded(
-                flex: 7,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'title',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.w800),
-                    ),
-                    SizedBox(height: 10.0),
-                    Text('description')
-                  ],
-                ),
-              ),
-              IconButton(
-                onPressed: favButton1,
-                icon: Icon(
-                  Icons.favorite,
-                  color: buttonColor1,
-                ),
-              ),
-            ],
-          ),
+        FavoriteItem(
+          title: 'Title 1',
+          description: 'Description ',
+          isFavorite: isFavorite1,
+          onPressed: favButton1,
         ),
-        Container(
-          decoration: const BoxDecoration(
-            border: Border(
-              bottom: BorderSide(width: .5, color: Colors.grey),
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Expanded(
-                flex: 7,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'title',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.w800),
-                    ),
-                    SizedBox(height: 10.0),
-                    Text('description')
-                  ],
-                ),
-              ),
-              IconButton(
-                onPressed: favButton2,
-                icon: Icon(
-                  Icons.favorite,
-                  color: buttonColor2,
-                ),
-              ),
-            ],
-          ),
+        FavoriteItem(
+          title: 'Title 2',
+          description: 'Description ',
+          isFavorite: isFavorite2,
+          onPressed: favButton2,
         ),
-        Container(
-          decoration: const BoxDecoration(
-            border: Border(
-              bottom: BorderSide(width: .5, color: Colors.grey),
-            ),
-          ),
-          padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Expanded(
-                flex: 7,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'title',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.w800),
-                    ),
-                    SizedBox(height: 10.0),
-                    Text('description')
-                  ],
-                ),
-              ),
-              IconButton(
-                onPressed: favButton3,
-                icon: Icon(
-                  Icons.favorite,
-                  color: buttonColor3,
-                ),
-              ),
-            ],
-          ),
+        FavoriteItem(
+          title: 'Title 3',
+          description: 'Description',
+          isFavorite: isFavorite3,
+          onPressed: favButton3,
         ),
       ],
+    );
+  }
+}
+
+class FavoriteItem extends StatelessWidget {
+  final String title;
+  final String description;
+  final bool isFavorite;
+  final VoidCallback onPressed;
+
+  const FavoriteItem({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.isFavorite,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(width: .5, color: Colors.grey),
+        ),
+      ),
+      padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(
+            flex: 7,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                Text(description),
+              ],
+            ),
+          ),
+          IconButton(
+            onPressed: onPressed,
+            icon: Icon(
+              Icons.favorite,
+              color: isFavorite ? Colors.red : Colors.grey,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -172,8 +120,8 @@ void main() => runApp(MaterialApp(
           title: const Text("Custom Buttons"),
           backgroundColor: Colors.blue,
         ),
-        body: Center(
-          child: FavoriteHeart(),
+        body: const Center(
+          child: Heart(),
         ),
       ),
     ));
