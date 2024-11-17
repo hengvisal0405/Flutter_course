@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 enum Buttons {
   btnSubmit(
     backgroundColor:Colors.blue,
-    icon:'/Users/notvalsy/Documents/CADT-Y3T1/mobile_development/flutter_app/assets/icons/icons8-tick-50.png',
+    icon:'/assets/icons/icons8-tick-50.png',
     text: 'Submit',
   ),
   btnTime(
     backgroundColor: Colors.green,
-    icon:'/Users/notvalsy/Documents/CADT-Y3T1/mobile_development/flutter_app/assets/icons/icons8-time-24.png',
+    icon:'/assets/icons/icons8-time-24.png',
     text: 'Time',
   ),
   btnAccount(
     backgroundColor: Color(0xFFB3B6B7),
-    icon:'/Users/notvalsy/Documents/CADT-Y3T1/mobile_development/flutter_app/assets/icons/icons8-account-50.png',
+    icon:'/assets/icons/icons8-account-50.png',
     text: 'Account',
   );
 
