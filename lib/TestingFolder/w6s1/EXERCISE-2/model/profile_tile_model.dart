@@ -4,15 +4,10 @@ class ProfileData {
   final String name;
   final String position;
   final String avatarUrl;
-  final Color colorTheme;
   final List<TileData> tiles;
 
   ProfileData(
-      {required this.name,
-      required this.position,
-      required this.tiles,
-      required this.avatarUrl,
-      required this.colorTheme});
+      {required this.name, required this.position, required this.tiles, required this.avatarUrl});
 }
 
 class TileData {
@@ -21,7 +16,7 @@ class TileData {
   final String value;
 
   TileData(
-    {required this.icon, 
-    required this.title, 
-    required this.value});
+      {required this.icon,
+      required this.title,
+      required this.value});  
 }

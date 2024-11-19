@@ -7,7 +7,7 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: ProfileApp(
-      profileData: ronanProfile,
+      profileData: SalProfile,
     ),
   ));
 }

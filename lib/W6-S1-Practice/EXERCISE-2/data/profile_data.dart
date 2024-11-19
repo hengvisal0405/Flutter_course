@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/W6-S1-PRACTICE/EXERCISE-2/model/profile_tile_model.dart';
 ProfileData ronanProfile = ProfileData(
-    name: "Ronan",
+    name: "Pro Ronan",
     position: "Flutter Developer",
-    avatarUrl: 'assets/W6-S1/teacher.jpeg',
+    avatarUrl: 'assets/w4-s2/girl.jpg',
     colorTheme: const Color(0xff5E9FCD),
     tiles: [
       TileData(
@@ -13,30 +13,25 @@ ProfileData ronanProfile = ProfileData(
       TileData(icon: Icons.email, title: "Mail", value: "ronan.ogogr@cadt.edu"),
     ]);
 
-ProfileData jinxProfile = ProfileData(
-    name: "Jinx",
-    position: "ADC",
-    avatarUrl: "assets/W6-S1/Jinx.jpg",
+ProfileData SalProfile = ProfileData(
+    name: "Heng Visal",
+    position: "CEO",
+    avatarUrl: "assets/W4-s2/girl.jpg",
     colorTheme: const Color(0xFFB0E0E6),
     tiles: [
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 111 1111"),
-      TileData(icon: Icons.location_on, title: "Address", value: "Zaun"),
-      TileData(icon: Icons.email, title: "Mail", value: "jinx123@gmail.com"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
       TileData(icon: Icons.color_lens, title: "Color", value: "Blue"),
       TileData(icon: Icons.family_restroom, title: "Family", value: "Violet"),
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 222 2222"),
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 222 2222"),
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 222 2222"),
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 222 2222"),
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 222 2222"),
     ]);
 
-ProfileData viProfile = ProfileData(
-    name: "VI",
+ProfileData mlbbiProfile = ProfileData(
+    name: "valsyrh",
     position: "Jungle",
-    avatarUrl: "assets/W6-S1/Vi.jpg",
+    avatarUrl: "assets/w4-s2/girl.jpg",
     colorTheme: const Color(0xFFC71585),
     tiles: [
-      TileData(icon: Icons.phone, title: "Phone Number", value: "+1 222 2222"),
-      TileData(icon: Icons.location_on, title: "Address", value: "Zaun")
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+431884869"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh")
     ]);
