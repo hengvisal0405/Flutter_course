@@ -21,7 +21,17 @@ class _TemperatureAppState extends State<TemperatureApp> {
   }
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
+    Widget screen;
+
+    if (_checkScreen) {
+      screen = Welcome(
+        pressedButton: switchScreen,
+      );
+    } else {
+      screen = Temperature();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -35,11 +45,7 @@ class _TemperatureAppState extends State<TemperatureApp> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: _checkScreen
-              ? Welcome(
-                  pressedButton: switchScreen,
-                )
-              : Temperature(),
+          child: screen,
         ),
       ),
     );
