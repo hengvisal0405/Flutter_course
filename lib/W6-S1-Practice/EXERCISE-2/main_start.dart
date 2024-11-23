@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/W6-S1-PRACTICE/EXERCISE-2/data/profile_data.dart';
-import 'package:flutter_app/W6-S1-PRACTICE/EXERCISE-2/model/profile_tile_model.dart';
+import 'package:your_project_name/W6-S1-Practice/EXERCISE-2/data/profile_data.dart';
+import 'package:your_project_name/W6-S1-Practice/EXERCISE-2/model/profile_tile_model.dart';
 
 
 void main() {
@@ -57,7 +57,7 @@ class ProfileApp extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               SizedBox(
-                height: 500,
+                height: 700,
                 child: ListView.builder(
                   itemCount: profileData.tiles.length,
                   itemBuilder: (context, index) {

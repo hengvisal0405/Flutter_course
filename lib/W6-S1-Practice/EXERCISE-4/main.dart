@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'favjoke.dart';
+import 'jokes.dart';
 
 Color appColor = Colors.green[300] as Color;
 
@@ -17,7 +17,12 @@ class _FavoriteJokesAppState extends State<FavoriteJokesApp> {
 
   void setFavorite(int index) {
     setState(() {
-      _favoriteIndex = (_favoriteIndex == index) ? null : index;
+      if (_favoriteIndex == index) {
+        _favoriteIndex = null;
+      } else {
+        _favoriteIndex = index;
+      }
+
     });
   }
 
@@ -31,14 +36,20 @@ class _FavoriteJokesAppState extends State<FavoriteJokesApp> {
       ),
       body: ListView.builder(
         itemCount: jokes.length,
-        itemBuilder: (context, index) {
+        itemBuilder: (context, jokeIndex) {
+          final joke = jokes[jokeIndex];
+          final isSelectedAsFavorite = _favoriteIndex == jokeIndex;
+
           return FavoriteCard(
-            jokes: jokes[index],
-            isFavorite: _favoriteIndex == index,
-            onFavoriteClick: () => setFavorite(index),
+            jokes: joke,
+            isFavorite: isSelectedAsFavorite,
+            onFavoriteClick: () {
+              setFavorite(jokeIndex);
+            },
           );
         },
       ),
+
     );
   }
 }
@@ -88,6 +99,7 @@ class FavoriteCard extends StatelessWidget {
               isFavorite ? Icons.favorite : Icons.favorite_border,
               color: isFavorite ? Colors.red : Colors.grey,
             ),
+            
           )
         ],
       ),

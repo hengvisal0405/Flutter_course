@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/W6-S1-PRACTICE/EXERCISE-2/model/profile_tile_model.dart';
+import 'package:your_project_name/W6-S1-Practice/EXERCISE-2/model/profile_tile_model.dart';
 ProfileData ronanProfile = ProfileData(
     name: "Pro Ronan",
     position: "Flutter Developer",
@@ -22,8 +22,24 @@ ProfileData SalProfile = ProfileData(
       TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
       TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
       TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
-      TileData(icon: Icons.color_lens, title: "Color", value: "Blue"),
-      TileData(icon: Icons.family_restroom, title: "Family", value: "Violet"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
+      TileData(icon: Icons.phone, title: "Phone Number", value: "+885 9898989"),
+      TileData(icon: Icons.location_on, title: "Address", value: "Phnom Penh"),
+      TileData(icon: Icons.email, title: "Mail", value: "valsy@gmail.com"),
     ]);
 
 ProfileData mlbbiProfile = ProfileData(

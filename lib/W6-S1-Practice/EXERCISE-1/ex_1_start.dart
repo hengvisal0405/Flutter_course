@@ -6,17 +6,17 @@ List<Widget> forLoop() {
   List<Widget> widgets = [];
 
   for (String color in colors) {
-    widgets.add(Label(color));
+    widgets.add(Text(color));
   }
   return widgets;
 }
 
 List<Widget> mapMethod() {
-  return colors.map((color) => Label(color)).toList();
+  return colors.map((color) => Text(color)).toList();
 }
 
 List<Widget> dedicatedFunc() {
-  return colors.map((color) => Label(color)).toList();
+  return colors.map((color) => Text(color)).toList();
 }
 
 void main() {
