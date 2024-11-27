@@ -7,7 +7,7 @@ class QuestionScreen extends StatefulWidget {
   final Quiz quiz;
   final VoidCallback onFinish;
   final Function(int score) onScoreUpdate;
-
+ 
   const QuestionScreen({
     Key? key,
     required this.quiz,
@@ -24,16 +24,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Submission submission = Submission();
 void clickQuestion(String selectedAnswer) {
     final currentQuestion = widget.quiz.questions[questionCount];
-    print('Current Question: $currentQuestion');
-    print('Selected Answer: $selectedAnswer');
     submission.addAnswer(currentQuestion, selectedAnswer);
-    final retrievedAnswer = submission.getAnswerFor(currentQuestion);
-    if (retrievedAnswer != null) {
-      print('Retrieved Answer: ${retrievedAnswer.questionAnswer}');
-    } else {
-      print("Answer not found for question: ${currentQuestion.title}");
-    }
-
     setState(() {
       if (questionCount < widget.quiz.questions.length - 1) {
         questionCount++;
@@ -106,17 +97,7 @@ void clickQuestion(String selectedAnswer) {
         const SizedBox(
           height: 30,
         ),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: ElevatedButton(
-            onPressed: () {
-              int score = submission.getScore();
-              widget.onScoreUpdate(score);
-              widget.onFinish();
-            },
-            child: const Text('Finish Quiz'),
-          ),
-        ),
+       
       ],
     );
   }

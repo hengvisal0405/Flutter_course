@@ -1,4 +1,4 @@
-import 'package:your_project_name/W7-S1/model/quiz.dart';
+import 'package:your_project_name/W7-S1-V2/model/quiz.dart';
 
 class Answer {
   final String questionAnswer;

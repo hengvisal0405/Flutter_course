@@ -39,17 +39,16 @@ class ResultScreen extends StatelessWidget {
             SizedBox(height: 20),
             ListView.builder(
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: quiz.questions.length,
               itemBuilder: (context, index) {
-                var question = quiz.questions[index];
-                var answered = submission.getAnswerFor(question);
-                var userAnswer = answered?.questionAnswer;
-
-                // Debugging output
+                final question = quiz.questions[index];
+                final answer = submission.getAnswerFor(question);
+                final userAnswer = answer?.questionAnswer;
+                final isCorrect = answer?.isCorrect() ?? false;
                 print('Question: ${question.title}');
+                print('User Answer: ${userAnswer}');
                 print('Correct Answer: ${question.goodAnswer}');
-                print('User Answer: ${userAnswer ?? "No answer"}');
-
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -132,7 +131,7 @@ class ResultScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Your Answer: ${userAnswer ?? "No answer"}',
+                        'Your Answer: $userAnswer',
                         style: TextStyle(
                           fontSize: 16,
                           color: userAnswer == question.goodAnswer
