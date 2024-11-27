@@ -1,3 +1,4 @@
+// question_screen.dart
 import 'package:flutter/material.dart';
 import 'package:your_project_name/W7-S1/model/quiz.dart';
 import 'package:your_project_name/W7-S1/model/submission.dart';
@@ -13,7 +14,6 @@ class QuestionScreen extends StatefulWidget {
     required this.onFinish,
     required this.onScoreUpdate,
   }) : super(key: key);
-  
 
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
@@ -22,23 +22,29 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   int questionCount = 0;
   Submission submission = Submission();
-
-  void clickQuestion(String selectedAnswer) {
+void clickQuestion(String selectedAnswer) {
     final currentQuestion = widget.quiz.questions[questionCount];
-
+    print('Current Question: $currentQuestion');
+    print('Selected Answer: $selectedAnswer');
     submission.addAnswer(currentQuestion, selectedAnswer);
+    final retrievedAnswer = submission.getAnswerFor(currentQuestion);
+    if (retrievedAnswer != null) {
+      print('Retrieved Answer: ${retrievedAnswer.questionAnswer}');
+    } else {
+      print("Answer not found for question: ${currentQuestion.title}");
+    }
 
     setState(() {
       if (questionCount < widget.quiz.questions.length - 1) {
         questionCount++;
       } else {
         int score = submission.getScore();
+        print('Final Score: $score');
         widget.onScoreUpdate(score);
         widget.onFinish();
       }
     });
   }
-
   @override
   Widget build(BuildContext context) {
     final currentQuestion = widget.quiz.questions[questionCount];
@@ -47,16 +53,16 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
-
       children: [
         Padding(
           padding: EdgeInsets.all(10),
-          child: Text("Question ${questionPage} in ${totalQuestions}",
-          style: TextStyle(
-            color: Color(0xfff4d03f),
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          child: Text(
+            "Question ${questionPage} in ${totalQuestions}",
+            style: TextStyle(
+              color: Color(0xfff4d03f),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         Padding(
@@ -111,7 +117,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
             child: const Text('Finish Quiz'),
           ),
         ),
-
       ],
     );
   }

@@ -6,6 +6,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
+  uuid: ^4.4.2
   flutter:
     sdk: flutter
 
@@ -18,3 +19,4 @@ flutter:
     - assets/dice-2/
     - assets/icons/
     - assets/w4-s2/
+ 

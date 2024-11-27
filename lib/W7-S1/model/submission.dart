@@ -12,37 +12,42 @@ class Answer {
   bool isCorrect() {
     return questionAnswer == question.goodAnswer;
   }
+
+  @override
+  String toString() {
+    return 'Answer(question: ${question.title}, selectedAnswer: $questionAnswer)';
+  }
 }
 
 class Submission {
-  List<Answer> answers = [];
+  final Map<Question, Answer> answers = {};
+  void addAnswer(Question question, String selectedAnswer) {
+    if (selectedAnswer.isEmpty) {
+      print('No answer selected for question: ${question.title}');
+    } else {
+      answers[question] =
+          Answer(question: question, questionAnswer: selectedAnswer);
+    }
+  }
+
+  Answer? getAnswerFor(Question question) {
+    return answers[question];
+  }
+
   int getScore() {
     int totalScore = 0;
-    for (var answer in answers) {
+    answers.forEach((question, answer) {
       totalScore += answer.isCorrect() ? 1 : 0;
-    }
+    });
     return totalScore;
   }
 
-  Answer getAnswerFor(Question question) {
-    for (var answer in answers) {
-      if (answer.question == question) {
-        return answer;
-      }
-    }
-    return Answer(question: question, questionAnswer: '');
-  }
-  void addAnswer(Question question, String answer) {
-    var existingAnswer = answers.firstWhere(
-      (ans) => ans.question == question,
-      orElse: () => Answer(question: question, questionAnswer: ''),
-    );
-    existingAnswer.questionAnswer = answer;
-    if (!answers.contains(existingAnswer)) {
-      answers.add(existingAnswer);
-    }
-  }
   void removeAnswers() {
     answers.clear();
+    print('All answers have been removed.');
+  }
+
+  List<Answer> getAnsweredQuestions() {
+    return answers.values.toList();
   }
 }

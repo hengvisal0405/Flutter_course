@@ -23,12 +23,17 @@ class WelcomeScreen extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             fontSize: 35, 
-            fontWeight: FontWeight.bold),
+            fontWeight: FontWeight.bold
+            ),
         ),
         const SizedBox(height: 20),
         ElevatedButton.icon(
           icon: Icon(Icons.arrow_forward), 
           label: Text('Start Quiz',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.blue
+          ),
           ),   
           onPressed: onStart,
           style: ElevatedButton.styleFrom(
