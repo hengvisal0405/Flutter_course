@@ -69,8 +69,62 @@ void main() {
     possibleAnswers: ["Green", "Blue", "Yellow"],
     goodAnswer: "Blue",
   );
+  Question q12 = Question(
+    title: "Which planet is known as the Red Planet?",
+    possibleAnswers: ["Earth", "Mars", "Jupiter"],
+    goodAnswer: "Mars",
+  );
 
-  List<Question> myQuestions = [q1, q2,q3,q4,q5,q6,q7,q8,q9,q10,q11];
+  Question q13 = Question(
+    title: "Who developed the theory of relativity?",
+    possibleAnswers: ["Isaac Newton", "Albert Einstein", "Nikola Tesla"],
+    goodAnswer: "Albert Einstein",
+  );
+
+  Question q14 = Question(
+    title: "What is the largest mammal on Earth?",
+    possibleAnswers: ["Elephant", "Blue Whale", "Giraffe"],
+    goodAnswer: "Blue Whale",
+  );
+
+  Question q15 = Question(
+    title: "Which element has the chemical symbol 'O'?",
+    possibleAnswers: ["Oxygen", "Osmium", "Ozone"],
+    goodAnswer: "Oxygen",
+  );
+
+  Question q16 = Question(
+    title: "What is the capital of Japan?",
+    possibleAnswers: ["Kyoto", "Osaka", "Tokyo"],
+    goodAnswer: "Tokyo",
+  );
+
+  Question q17 = Question(
+    title: "What is the smallest country in the world?",
+    possibleAnswers: ["Monaco", "Vatican City", "San Marino"],
+    goodAnswer: "Vatican City",
+  );
+
+  Question q18 = Question(
+    title: "Which animal is known for its black and white stripes?",
+    possibleAnswers: ["Zebra", "Tiger", "Leopard"],
+    goodAnswer: "Zebra",
+  );
+
+  Question q19 = Question(
+    title: "In what year did the Titanic sink?",
+    possibleAnswers: ["1912", "1905", "1920"],
+    goodAnswer: "1912",
+  );
+
+  Question q20 = Question(
+    title: "Who painted the Mona Lisa?",
+    possibleAnswers: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci"],
+    goodAnswer: "Leonardo da Vinci",
+  );
+
+
+  List<Question> myQuestions = [q1, q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20];
   Quiz myQuiz = Quiz(title: "Crazy Quizz", questions: myQuestions);
 
   runApp(QuizApp(myQuiz));

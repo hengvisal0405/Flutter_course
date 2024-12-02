@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 const uuid = Uuid();
 
+// Define Category enum with icon parameter
 enum Category {
   food(Icons.lunch_dining),
   travel(Icons.flight_takeoff),
@@ -27,4 +28,8 @@ class Expense {
   final double amount;
   final DateTime date;
   final Category category;
+   @override
+  String toString() {
+    return 'Expense(title: $title, amount: $amount, date: $date, category: $category)';
+  }
 }

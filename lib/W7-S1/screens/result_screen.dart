@@ -45,7 +45,6 @@ class ResultScreen extends StatelessWidget {
                 final question = quiz.questions[index];
                 final answer = submission.getAnswerFor(question);
                 final userAnswer = answer?.questionAnswer;
-                final isCorrect = answer?.isCorrect() ?? false;
                 print('Question: ${question.title}');
                 print('User Answer: ${userAnswer}');
                 print('Correct Answer: ${question.goodAnswer}');

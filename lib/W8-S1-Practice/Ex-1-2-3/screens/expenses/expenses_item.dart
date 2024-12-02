@@ -8,8 +8,7 @@ class ExpenseItem extends StatelessWidget {
   final Expense expense;
   final formatter = DateFormat.yMd();
 
-  String get formatedDate =>
-      formatter.format(expense.date); // We format the date DD/MM/YYYY
+  String get formatedDate => formatter.format(expense.date);  
 
   @override
   Widget build(BuildContext context) {
