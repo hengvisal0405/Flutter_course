@@ -3,6 +3,8 @@ import '../../models/expense.dart';
 import 'expenses_form.dart';
 import 'expenses_list.dart';
 
+
+
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
   @override
@@ -16,10 +18,8 @@ class _ExpensesState extends State<Expenses> {
 
   void _removeExpense(int index) {
     setState(() {
-      _registeredExpenses.removeAt(index);
+      _registeredExpenses.removeAt(index); // Removes from the parent list
     });
-    // Debugging: check if the list becomes empty
-    print("Expense removed. Remaining expenses: $_registeredExpenses");
   }
 
   void onAddPressed() {
@@ -29,15 +29,15 @@ class _ExpensesState extends State<Expenses> {
       builder: (ctx) => ExpenseForm(
         onSaveExpense: (title, amount, date, category) {
           setState(() {
-            _registeredExpenses.add(Expense(
-              title: title,
-              amount: amount,
-              date: DateTime.parse(date),
-              category: category,
-            ));
+            _registeredExpenses.add(
+              Expense(
+                title: title,
+                amount: amount,
+                date: DateTime.parse(date),
+                category: category,
+              ),
+            );
           });
-          // Debugging: check updated list
-          print("Expense added. Current expenses: $_registeredExpenses");
         },
       ),
     );
@@ -57,19 +57,9 @@ class _ExpensesState extends State<Expenses> {
         backgroundColor: Colors.blue[700],
         title: const Text('Ronan-The-Best Expenses App'),
       ),
-      body: _registeredExpenses.isEmpty
-          ? Center(
-              child: Text(
-                "No expense found. Go to add something!",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
-              ),
-            )
-          : ExpensesList(
+      body:  ExpensesList(
               expenses: _registeredExpenses,
-              onDismiss: (index) => _removeExpense(index),
+              onDismiss: _removeExpense,
             ),
     );
   }
